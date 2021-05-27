@@ -43,6 +43,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=19.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\VisualStudioProjectsDemo\eCommerce\packages\AjaxControlToolkit.19.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -1058,15 +1062,54 @@
     <Content Include="ckeditor\skins\moono-lisa\images\spinner.gif" />
     <Content Include="ckeditor\styles.js" />
     <Content Include="ckeditor\vendor\promise.js" />
-    <Content Include="Images\LogoColor.jpg" />
-    <Content Include="Images\noimage.jpg" />
-    <Content Include="Images\Caresoul1.jpeg" />
-    <Content Include="Images\Caresoul2.jpeg" />
-    <Content Include="Images\Caresoul3.jpeg" />
+    <Content Include="Reports\Images\Company\Semicolans\Carousal1.jpg" />
+    <Content Include="Reports\Images\Company\Semicolans\Carousal2.jpg" />
+    <Content Include="Reports\Images\Company\Semicolans\Carousal3.jpg" />
+    <Content Include="Reports\Images\Company\Semicolans\Carousal4.jpg" />
+    <Content Include="Reports\Images\Company\Semicolans\LogoColor.jpg" />
     <Content Include="Reports\Images\Product\1902.jpg" />
+    <Content Include="Reports\Images\Product\1903.jpg" />
+    <Content Include="Reports\Images\Product\1904.jpg" />
     <Content Include="Reports\Images\Product\1905.jpg" />
     <Content Include="Reports\Images\Product\1906.jpg" />
+    <Content Include="Reports\Images\Product\1907.jpg" />
+    <Content Include="Reports\Images\Product\1909.jpg" />
+    <Content Include="Reports\Images\Product\1910.jpg" />
+    <Content Include="Reports\Images\Product\1913.jpg" />
+    <Content Include="Reports\Images\Product\1914.jpg" />
+    <Content Include="Reports\Images\Product\1915.jpg" />
+    <Content Include="Reports\Images\Product\1916.jpg" />
+    <Content Include="Reports\Images\Product\1917.jpg" />
+    <Content Include="Reports\Images\Product\1918.jpg" />
+    <Content Include="Reports\Images\Product\1919.jpg" />
+    <Content Include="Reports\Images\Product\1920.jpg" />
+    <Content Include="Reports\Images\Product\1921.jpg" />
+    <Content Include="Reports\Images\Product\1922.jpg" />
+    <Content Include="Reports\Images\Product\1923.jpg" />
+    <Content Include="Reports\Images\Product\1924.jpg" />
+    <Content Include="Reports\Images\Product\1925.jpg" />
+    <Content Include="Reports\Images\Product\1926.jpg" />
+    <Content Include="Reports\Images\Product\1927.jpg" />
+    <Content Include="Reports\Images\Product\1928.jpg" />
     <Content Include="Reports\Images\Product\1932.jpg" />
+    <Content Include="Reports\Images\Product\1933.jpg" />
+    <Content Include="Reports\Images\Product\1935.jpg" />
+    <Content Include="Reports\Images\Product\1936.jpg" />
+    <Content Include="Reports\Images\Product\1937.jpg" />
+    <Content Include="Reports\Images\Product\1938.jpg" />
+    <Content Include="Reports\Images\Product\1939.jpg" />
+    <Content Include="Reports\Images\Product\1940.jpg" />
+    <Content Include="Reports\Images\Product\1942.jpg" />
+    <Content Include="Reports\Images\Product\1944.jpg" />
+    <Content Include="Reports\Images\Product\1945.jpg" />
+    <Content Include="Reports\Images\Product\1946.jpg" />
+    <Content Include="Reports\Images\Product\1947.jpg" />
+    <Content Include="Reports\Images\Product\1948.jpg" />
+    <Content Include="Reports\Images\Product\1949.jpg" />
+    <Content Include="Reports\Images\Product\1950.jpg" />
+    <Content Include="Reports\Images\Product\1951.jpg" />
+    <Content Include="Reports\Images\Product\1952.jpg" />
+    <Content Include="Reports\Images\Product\1953.jpg" />
     <Content Include="Reports\Images\Product\1954.jpg" />
     <Content Include="Reports\Images\Product\1955.jpg" />
     <Content Include="Reports\Images\Product\1956.jpg" />
@@ -2706,42 +2749,18 @@
     <Content Include="Fontawesome\webfonts\fa-brands-400.svg" />
     <Content Include="Fontawesome\webfonts\fa-regular-400.svg" />
     <Content Include="Fontawesome\webfonts\fa-solid-900.svg" />
-    <Content Include="Images\CategoryImages\5yL9X3mGPIM1dF7JNqvl-galaxy-a20s-mobile-phones-price-in-sri-lanka_3141_jpg.jpg" />
-    <Content Include="Images\CategoryImages\AeK1cFZXwHbpSQzEnmLU-galaxy-a20s-mobile-phones-price-in-sri-lanka_3141_jpg.jpg" />
-    <Content Include="Images\CategoryImages\Category.svg" />
-    <Content Include="Images\CategoryImages\oDkPb31HnQ4wxIrigKmy74530956_2935169896510834_2936928650236264448_n.jpg" />
-    <Content Include="Images\CategoryImages\yFlkHJtnNfOWEIsT0dC4-galaxy-a20s-mobile-phones-price-in-sri-lanka_3141_jpg.jpg" />
-    <Content Include="Images\CompanyImages\Company.svg" />
-    <Content Include="Images\CompanyImages\fwsUPFE9WT5dQCI24OXVdownload.jpg" />
-    <Content Include="Images\CompanyImages\gRuCHFqcDz7LtZBwfYMvdownload.jpg" />
-    <Content Include="Images\CompanyImages\lA27fQvj81uVwBRFHp6Udownload.jpg" />
-    <Content Include="Images\CompanyImages\Uum1sFfix7SOpKrLV5CNdownload.jpg" />
-    <Content Include="Images\CompanyImages\Yzoj9KHBvxbFLiuUyqdJdownload.jpg" />
-    <Content Include="Images\CustomerImages\BZz7lwbrKmhf9tVF2nqoiphone20x.jpg" />
-    <Content Include="Images\CustomerImages\CustomerProfile.svg" />
-    <Content Include="Images\CustomerImages\jTmH0GhcYtAzORC6QEd474530956_2935169896510834_2936928650236264448_n.jpg" />
-    <Content Include="Images\CustomerImages\K5h9J2BesxMQcwU06I8W74530956_2935169896510834_2936928650236264448_n.jpg" />
-    <Content Include="Images\CustomerImages\ywpohO290qvIMetRUBJA74530956_2935169896510834_2936928650236264448_n.jpg" />
-    <Content Include="Images\CustomerImages\ZjpJcdFWSY6xXP0loITM74530956_2935169896510834_2936928650236264448_n.jpg" />
-    <Content Include="Images\ProductImages\A315-53-370x370.jpg" />
-    <Content Include="Images\ProductImages\del_dell3576-i3w10b-04_zoom_1_1.jpg" />
-    <Content Include="Images\ProductImages\EMR1SXFOp4ZCxPe6N3dh3ed8477efea978488868e612f6b978d1.jpg_1200x1200q80.jpg" />
-    <Content Include="Images\ProductImages\g49iys6pdWFZH8MtwUuk3284550017b0ecc40b46003ce8bc3cf3.jpg_1200x1200q80.jpg" />
-    <Content Include="Images\ProductImages\hp.jpg" />
-    <Content Include="Images\ProductImages\ICpujzYA8FU5m96PoDQdp84_2.jpg" />
-    <Content Include="Images\ProductImages\No7JG3O8XdY2zyVLMsSbunnamed %281%29.jpg" />
-    <Content Include="Images\ProductImages\PlHzDtIbVr4JZBRk1uNLiphone20x.jpg" />
-    <Content Include="Images\ProductImages\Product.svg" />
-    <Content Include="Images\ProductImages\q3M06gHYRNEirZmwznXBdb0403abbfe69dd063337700060fd9bf.jpg_1200x1200q80.jpg" />
-    <Content Include="Images\ProductImages\xOfb2tuLF3cN0ThWHdJqiphone20x.jpg" />
-    <Content Include="Images\ProductImages\YqTRPrzxcKIpMOFBZb602df2422c6aec2ef146f3f705953cbbdb.jpg_1200x1200q80.jpg" />
-    <Content Include="Images\SubCategoryImages\SubCategory.svg" />
-    <Content Include="Images\SubCategoryImages\XdPNQbGlmFvYtVnM56yJ-galaxy-a20s-mobile-phones-price-in-sri-lanka_3141_jpg.jpg" />
-    <Content Include="Images\UserImages\74530956_2935169896510834_2936928650236264448_n.jpg" />
-    <Content Include="Images\UserImages\Lareef - Copy.jpg" />
-    <Content Include="Images\UserImages\Lareef.jpg" />
-    <Content Include="Images\UserImages\mcQgrw8p6CbeXYs49WfOBasith.jpg" />
-    <Content Include="Images\UserImages\UserProfile.svg" />
+    <Content Include="Reports\Images\Product\1957.jpg" />
+    <Content Include="Reports\Images\Product\1959.jpg" />
+    <Content Include="Reports\Images\Product\1961.jpg" />
+    <Content Include="Reports\Images\Product\1962.jpg" />
+    <Content Include="Reports\Images\Product\1963.jpg" />
+    <Content Include="Reports\Images\Product\1964.jpg" />
+    <Content Include="Reports\Images\Product\1967.jpg" />
+    <Content Include="Reports\Images\Product\1968.jpg" />
+    <Content Include="Reports\Images\Product\1970.jpg" />
+    <Content Include="Reports\Images\Product\1972.jpg" />
+    <Content Include="Reports\Images\Product\4791085011123.jpg" />
+    <Content Include="Reports\Images\Product\Product.jpg" />
     <Content Include="scripts\tinymce\jquery.tinymce.min.js" />
     <Content Include="scripts\tinymce\license.txt" />
     <Content Include="scripts\tinymce\plugins\advlist\plugin.js" />
@@ -2868,6 +2887,7 @@
     <Content Include="scripts\tinymce\themes\silver\theme.min.js" />
     <Content Include="scripts\tinymce\tinymce.js" />
     <Content Include="scripts\tinymce\tinymce.min.js" />
+    <Content Include="AdminSite\SupplierDet.aspx" />
     <Content Include="SweetAlert\Js\SweetAlert.css" />
     <Content Include="SweetAlert\Js\SweetAlert.js" />
     <Content Include="SweetAlert\Js\SweetAlert2.js" />
@@ -2887,38 +2907,6 @@
     <Content Include="UserSite\DisplayProductDetails.aspx" />
     <Content Include="UserSite\fonts\fontawesome-webfont.svg" />
     <Content Include="UserSite\fonts\slick.svg" />
-    <Content Include="UserSite\img\banner01.jpg" />
-    <Content Include="UserSite\img\banner02.jpg" />
-    <Content Include="UserSite\img\banner03.jpg" />
-    <Content Include="UserSite\img\banner04.jpg" />
-    <Content Include="UserSite\img\banner05.jpg" />
-    <Content Include="UserSite\img\banner06.jpg" />
-    <Content Include="UserSite\img\banner07.jpg" />
-    <Content Include="UserSite\img\banner08.jpg" />
-    <Content Include="UserSite\img\banner09.jpg" />
-    <Content Include="UserSite\img\banner10.jpg" />
-    <Content Include="UserSite\img\banner11.jpg" />
-    <Content Include="UserSite\img\banner12.jpg" />
-    <Content Include="UserSite\img\banner13.jpg" />
-    <Content Include="UserSite\img\banner14.jpg" />
-    <Content Include="UserSite\img\banner15.jpg" />
-    <Content Include="UserSite\img\logo.png" />
-    <Content Include="UserSite\img\main-product01.jpg" />
-    <Content Include="UserSite\img\main-product02.jpg" />
-    <Content Include="UserSite\img\main-product03.jpg" />
-    <Content Include="UserSite\img\main-product04.jpg" />
-    <Content Include="UserSite\img\product01.jpg" />
-    <Content Include="UserSite\img\product02.jpg" />
-    <Content Include="UserSite\img\product03.jpg" />
-    <Content Include="UserSite\img\product04.jpg" />
-    <Content Include="UserSite\img\product05.jpg" />
-    <Content Include="UserSite\img\product06.jpg" />
-    <Content Include="UserSite\img\product07.jpg" />
-    <Content Include="UserSite\img\product08.jpg" />
-    <Content Include="UserSite\img\thumb-product01.jpg" />
-    <Content Include="UserSite\img\thumb-product02.jpg" />
-    <Content Include="UserSite\img\thumb-product03.jpg" />
-    <Content Include="UserSite\img\thumb-product04.jpg" />
     <Content Include="UserSite\js\bootstrap.min.js" />
     <Content Include="UserSite\js\jquery.min.js" />
     <Content Include="UserSite\js\jquery.zoom.min.js" />
@@ -2927,6 +2915,8 @@
     <Content Include="UserSite\js\slick.min.js" />
     <Content Include="UserSite\ShoppingCard.aspx" />
     <Content Include="UserSite\Default.aspx" />
+    <Content Include="UserSite\WebForm2.aspx" />
+    <Content Include="UserSite\WebForm3.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -2973,6 +2963,13 @@
       <DependentUpon>SubCategoriesDet.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AdminSite\SupplierDet.aspx.cs">
+      <DependentUpon>SupplierDet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminSite\SupplierDet.aspx.designer.cs">
+      <DependentUpon>SupplierDet.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UserSite\CheckoutPage.aspx.cs">
       <DependentUpon>CheckoutPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -3028,6 +3025,20 @@
     </Compile>
     <Compile Include="UserSite\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserSite\WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserSite\WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserSite\WebForm3.aspx.cs">
+      <DependentUpon>WebForm3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserSite\WebForm3.aspx.designer.cs">
+      <DependentUpon>WebForm3.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -3192,8 +3203,6 @@
     <Content Include="Fontawesome\webfonts\fa-solid-900.ttf" />
     <Content Include="Fontawesome\webfonts\fa-solid-900.woff" />
     <Content Include="Fontawesome\webfonts\fa-solid-900.woff2" />
-    <Content Include="Images\ProductImages\Thumbs.db" />
-    <Content Include="Images\UserImages\Thumbs.db" />
     <Content Include="ckeditorFullPackage\CHANGES.md" />
     <Content Include="ckeditorFullPackage\LICENSE.md" />
     <Content Include="ckeditorFullPackage\plugins\scayt\CHANGELOG.md" />
@@ -3252,7 +3261,6 @@
     <Content Include="UserSite\fonts\slick.eot" />
     <Content Include="UserSite\fonts\slick.ttf" />
     <Content Include="UserSite\fonts\slick.woff" />
-    <Content Include="UserSite\img\Thumbs.db" />
     <Content Include="UserSite\User.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

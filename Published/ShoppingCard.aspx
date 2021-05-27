@@ -108,18 +108,18 @@
                                             </div>
                                             <div class="col-md-2 text-right" style="margin-top: 20px;">
                                                 <div class="row">
-                                                    <asp:Label ID="lblItemDPrice" runat="server" Font-Bold="True" Font-Size="Larger" Text='<%# Convert.ToDecimal(Eval("ItemDPrice"))>0?  String.Format("{0:#.00}",Eval("ItemDPrice")):String.Format("{0:#.00}",Eval("ItemSPrice")) %>' >
+                                                    <asp:Label ID="lblItemDPrice" runat="server" Font-Bold="True" Font-Size="Larger" Text='<%# Convert.ToDecimal(Eval("ItemDPrice"))>0?  Eval("ItemDPrice"):Eval("ItemSPrice") %>' >
                                                     </asp:Label></h4>
                                                 </div>
                                                 <div class="row">
                                                     <del>
-                                                        <asp:Label ID="lblItemSPrice" class="font-weak" runat="server" Style="color: #F8694A;" Font-Bold="True" Text='<%# String.Format("{0:#,#.00}",Eval("ItemSPrice")) %>' Visible='<%# Convert.ToDecimal(Eval("DiscountValue"))>0? true:false %>'>
+                                                        <asp:Label ID="lblItemSPrice" class="font-weak" runat="server" Style="color: #F8694A;" Font-Bold="True" Text='<%# Eval("ItemSPrice") %>' Visible='<%# Convert.ToDecimal(Eval("DiscountValue"))>0? true:false %>'>
                                                         </asp:Label></del></h5>
                                                 </div>
                                             </div>
                                             <div class="col-md-2 text-right" style="margin-top: 20px;">
                                                 <p>
-                                                    <asp:Label ID="lblTotalPrice" runat="server" Font-Bold="True" Style="color: #F8694A;" Font-Size="Larger" Text='<%# Eval("TotalPrice") %>'></asp:Label>
+                                                    <asp:Label ID="lblTotalPrice" runat="server" Font-Bold="True" Style="color: #F8694A;" Font-Size="Larger" Text='<%# Eval("TotalPrice","{0:c}") %>'></asp:Label>
                                                 </p>
                                             </div>
                                             <div class="col-md-1 text-right" style="margin-top: 20px;">
@@ -155,11 +155,11 @@
                                                             <h2 class="product-name"><a href="#"><%# Eval("ItemName") %></a></h2>
                                                         </div>
                                                         <div class="row">
-                                                            <h3 class="product-price" ><%# Convert.ToDecimal(Eval("ItemDPrice"))>0?  String.Format("{0:#,#.00}",Eval("ItemDPrice")):String.Format("{0:#,#.00}",Eval("ItemSPrice")) %><span class="qty"> x<%# String.Format("{0:#,#.00}",Eval("Qty")) %></span></h3>
+                                                            <h3 class="product-price" ><%# Convert.ToDecimal(Eval("ItemDPrice"))>0? Eval("ItemDPrice"):Eval("ItemSPrice") %><span class="qty"> x<%#Eval("Qty") %></span></h3>
                                                         </div> 
                                                         <div class="row">
                                                             <del>
-                                                        <asp:Label ID="lblItemSPrice" class="font-weak" runat="server" Style="color: #F8694A;" Font-Bold="True" Text='<%# String.Format("{0:#,#.00}",Eval("ItemSPrice")) %>' Visible='<%# Convert.ToDecimal(Eval("DiscountValue"))>0? true:false %>'>
+                                                        <asp:Label ID="lblItemSPrice" class="font-weak" runat="server" Style="color: #F8694A;" Font-Bold="True" Text='<%# Eval("ItemSPrice") %>' Visible='<%# Convert.ToDecimal(Eval("DiscountValue"))>0? true:false %>'>
                                                         </asp:Label></del></h5>
                                                         </div> 
                                                     </div>
@@ -168,7 +168,7 @@
                                             <div class="row pull-right" style="margin-right:10px;">
                                                 <div>
                                                     <asp:LinkButton ID="btnMinusMob" Style="width: 30px; height: 30px" runat="server" class="btn btn-danger btn-number glyphicon glyphicon-minus" data-type="minus" Visible="True" CommandName="MinusQty" CommandArgument='<%# Container.DataItemIndex %>'></asp:LinkButton>
-                                                    <asp:TextBox ID="txtQtyMob" runat="server" Style="width: 30px; height: 30px; text-align: center;" BorderStyle="None" Font-Size="Larger" Font-Bold="True" Text='<%# String.Format("{0:#,#.00}",Eval("Qty")) %>'></asp:TextBox>
+                                                    <asp:TextBox ID="txtQtyMob" runat="server" Style="width: 30px; height: 30px; text-align: center;" BorderStyle="None" Font-Size="Larger" Font-Bold="True" Text='<%# Eval("Qty") %>'></asp:TextBox>
                                                     <asp:LinkButton ID="btnPlusMob" Style="width: 30px; height: 30px;" runat="server" class="btn btn-success btn-number glyphicon glyphicon-plus" data-type="plus" Visible="True" CommandName="PlusQty" CommandArgument='<%# Container.DataItemIndex %>'></asp:LinkButton>
                                                 </div>
                                                 <div>

@@ -53,7 +53,7 @@
 
         </header>
         <!-- /HEADER -->
-        <nav class="navbar navbar-inverse navbar-fixed-top">
+        <nav class="navbar navbar-inverse navbar-fixed-top" >
               <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
@@ -63,11 +63,10 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                   </button>
-                    <asp:Image class="navbar-brand" Width="60px" Height="60px" runat="server" src="../Images/LogoColor.jpg" Style="margin-top:5px; border-radius:50%;padding:0px;"/>
+                    <asp:Image class="navbar-brand" Width="55px" Height="55px" runat="server" src="../Reports/Images/Company/Semicolans/LogoColor.jpg" Style="margin-top:5px; border-radius:50%;padding:0px;"/>
                   <a class="navbar-brand" style="font-size:30px;margin-top:5px;margin-left:1px;" href="#">
                       SEMICOLANS</a>
                 </div>
-
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                   <ul class="nav navbar-nav">
@@ -92,7 +91,7 @@
                                                             <asp:Image ID="Image1" Style="text-align: left;" Height="50px" Width="50px" runat="server" class="img-fluid p-2 thumb" ImageUrl='<%# "."+Eval("imgPath") %>'></asp:Image>
                                                         </div>
                                                         <div class="product-body">
-                                                            <h3 class="product-price"><%#String.Format("{0:#,#.00}",Eval("ItemSPrice")) %><span class="qty"> x<%# String.Format("{0:#,#.00}",Eval("Qty")) %></span></h3>
+                                                            <h3 class="product-price"><%#Eval("ItemSPrice") %><span class="qty"> x<%# Eval("Qty") %></span></h3>
                                                             <h2 class="product-name"><a href="#"><%# Eval("ItemName") %></a></h2>
                                                         </div>
                                                         <asp:LinkButton ID="btnDeleteItem" runat="server" class="cancel-btn" CommandName="DeleteShoppingItem" CommandArgument='<%# Container.DataItemIndex %>'>
@@ -203,7 +202,7 @@
                                                         <asp:Image ID="Image1" Style="text-align: left;" Height="50px" Width="50px" runat="server" class="img-fluid p-2 thumb" ImageUrl='<%# "."+Eval("imgPath") %>'></asp:Image>
                                                     </div>
                                                     <div class="product-body">
-                                                        <h3 class="product-price"><%# String.Format("{0:#,#.00}",Eval("ItemSPrice")) %><span class="qty"> x<%# String.Format("{0:#,#.00}",Eval("Qty")) %></span></h3>
+                                                        <h3 class="product-price"><%# Eval("ItemSPrice") %><span class="qty"> x<%#Eval("Qty") %></span></h3>
                                                         <h2 class="product-name"><a href="#"><%# Eval("ItemName") %></a></h2>
                                                     </div>
                                                     <asp:LinkButton ID="btnDeleteItem" runat="server" class="cancel-btn" CommandName="DeleteShoppingItem" CommandArgument='<%# Container.DataItemIndex %>'>
@@ -246,14 +245,23 @@
                         <div >
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                             Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-                            All rights reserved by <a href="www.semicolans.com" target="_blank">Semicolans (Pvt) Ltd.</a>
+                            <a href="www.semicolans.com" target="_blank">Semicolans (Pvt) Ltd.</a>All rights reserved.
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         </div>
                         <!-- /footer copyright -->
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-8 col-md-offset-2 text-center"><a href="../AdminSite/AdminLogin.aspx">STORE</a></div>
+                    <div class="col-md-8 col-md-offset-2 text-center"><a href="../AdminSite/AdminLogin.aspx">Login to STORE</a></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 text-center">
+                        <a href="#">Privacy Policy | </a>
+                        <a href="#">Return Policy | </a>
+                        <a href="#">Disclaimer | </a>
+                        <a href="#">FAQ | </a>
+                        <a href="#">Term & Conditions</a>
+                    </div>
                 </div>
                 <!-- /row -->
             </div>
@@ -263,24 +271,11 @@
     </form>
 </body>
 <!-- jQuery Plugins -->
-
-<%--<%--<script src="js/jquery.min.js"></script>--%>
-<%--<script src="js/popper.min.js"></script>--%>
-<%--<script src="js/bootstrap.min.js"></script>--%>
-<%--<script src="js/jquery.min.js"></script>--%>
-<%--<script src="js/jquery.min.js"></script>--%>
-
-<%--<script src="js/slick.min.js"></script>
-<script src="js/nouislider.min.js"></script>
-<script src="js/jquery.zoom.min.js"></script>
-<script src="js/main.js"></script>--%>
-
-    <script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.min.js"></script>
 
 <script src="js/slick.min.js"></script>
 <script src="js/nouislider.min.js"></script>
 <script src="js/jquery.zoom.min.js"></script>
 <script src="js/main.js"></script>
-
 </html>

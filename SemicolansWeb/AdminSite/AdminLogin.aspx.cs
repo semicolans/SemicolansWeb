@@ -26,8 +26,6 @@ namespace eCommerce.AdminSite
                 {
                     con.Open();
                 }
-                //SqlCommand cmd = new SqlCommand("SELECT * FROM tbl_UseAccounts WHERE " +
-                //    "UserName='" + txtUserName.Text.Trim() + "' AND Password='" + txtPassword.Text.Trim() + "',con");
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandText = $"SELECT * FROM tbl_UserAccounts WHERE UserName = '{ txtUserName.Text }' AND UserPassword = '{ txtPassword.Text }' ";
                 cmd.Connection = con;
@@ -37,13 +35,13 @@ namespace eCommerce.AdminSite
                 {
                     while (dr.Read())
                     {
-                        //Response.Write("<script> alert('Login Successful.');</script>");
-                        //Session["SUserType"] = dr.GetValue(19).ToString();
+                        Response.Write("<script> alert('Login Successful.');</script>");
+                        Session["SUserType"] = dr.GetValue(7).ToString();
                         //Session["SCompanyID"] = dr.GetValue(2).ToString();
                         //Session["SCompanyName"] = dr.GetValue(3).ToString();
                         //Session["SCompanyKeyword"] = dr.GetValue(4).ToString();
-                        //Session["SUserEmailID"] = dr.GetValue(7).ToString();
-                        //Session["SUserCompleteName"] = dr.GetValue(5).ToString() + " " + dr.GetValue(6).ToString();
+                        Session["SUserEmailID"] = dr.GetValue(4).ToString();
+                        Session["SUserCompleteName"] = dr.GetValue(3).ToString();
                     }
                     Response.Redirect("AdminDashboard.aspx");
                 }

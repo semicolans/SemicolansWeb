@@ -11,22 +11,22 @@ namespace eCommerce.AdminSite
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    if (Session["SUserEmailID"].Equals(""))
-            //    {
+            try
+            {
+                if (Session["SUserCompleteName"].Equals(""))
+                {
 
-            //    }
-            //    else
-            //    {
-            //        lblUserName.Text = Session["SUserCompleteName"].ToString() + " " + Session["SUserEmailID"].ToString();
-            //        lblCompanyID.Text = Session["SCompanyName"].ToString();
-            //    }
-            //}
-            //catch(Exception ex)
-            //{
+                }
+                else
+                {
+                    lblUserName.Text = Session["SUserCompleteName"].ToString() + " " + Session["SUserEmailID"].ToString();
+                    //lblCompanyID.Text = Session["SCompanyName"].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
 
-            //}
+            }
         }
 
         protected void btnLogOut_Click(object sender, EventArgs e)

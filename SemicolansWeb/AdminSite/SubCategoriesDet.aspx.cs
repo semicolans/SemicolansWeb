@@ -16,9 +16,40 @@ namespace eCommerce.AdminSite
         string strcon = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
-            grdSubCategoryDet.DataBind();
+            if (!IsPostBack)
+            {
+                Display_SubCategory();
+            }
         }
 
-        // add button click
+        void Display_SubCategory()
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection(strcon);
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandText = $"SELECT  * FROM tbl_SubCatDet";
+                cmd.Connection = con;
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+
+                grdSubCategoryDet.DataSource = ds;
+                grdSubCategoryDet.DataBind();
+                con.Close();
+
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('" + ex.Message + "');</script>");
+            }
+        }
     }
 }

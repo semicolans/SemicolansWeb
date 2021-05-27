@@ -22,44 +22,39 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     <div class="container-fluid pt-2">
-        <div class="row">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col text-center">
-                               <h4>Sub Category List</h4>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <hr>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <asp:SqlDataSource ID="sqldsSubCategoryDet" runat="server" ConnectionString="<%$ ConnectionStrings:eCommerceConnectionString %>" SelectCommand="SELECT [CatCode], [CatBCode], [CatName], [SubCatCode], [SubCatBCode], [SubCatName] FROM [tbl_SubCatDet]">
-                                </asp:SqlDataSource>
-                                <div class="col">
-                                    <asp:GridView class="table table-striped table-bordered" ID="grdSubCategoryDet" runat="server" AutoGenerateColumns="False" DataKeyNames="SubCatBCode" DataSourceID="sqldsSubCategoryDet">
-                                        <Columns>
-                                            <asp:BoundField DataField="SubCatBCode" HeaderText="ID" ReadOnly="True" SortExpression="SubCatBCode" InsertVisible="False" >
-                                            </asp:BoundField>
-                                            <asp:BoundField DataField="CatBCode" HeaderText="Category ID" SortExpression="CatBCode" />
-                                            <asp:BoundField DataField="CatName" HeaderText="Category" SortExpression="CatName" />
-                                            <asp:BoundField DataField="SubCatBCode" HeaderText="Sub Category ID" SortExpression="SubCatBCode" />
-                                            <asp:BoundField DataField="SubCatName" HeaderText="Sub Category" SortExpression="SubCatName" />                                            
-                                            <%--<asp:ImageField DataImageUrlField="SubcategoryImage" HeaderText="Img">
+        <!--Top Header-->
+        <div class="row pl-3">
+            <div class="section-title">
+                <h3 class="title pr-3">Sub Category Records</h3>
+                <asp:LinkButton ID="btlGridView" Style="width: 40px; height: 40px; cursor: pointer;" runat="server" CssClass="btn btn-primary"><i class="fas fa-th-large"></i></asp:LinkButton>
+                <asp:LinkButton ID="btnTableView" Style="width: 40px; height: 40px; cursor: pointer;" runat="server" CssClass="btn btn-primary"><i class="fas fa-list"></i></asp:LinkButton>
+            </div>
+        </div>
+        <!--Top Header-->
+        <!--Sub category Details-->
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <asp:SqlDataSource ID="sqldsSubCategoryDet" runat="server"></asp:SqlDataSource>
+                        <div class="col">
+                            <asp:GridView class="table table-striped table-bordered" ID="grdSubCategoryDet" runat="server" AutoGenerateColumns="False" DataKeyNames="SubCatBCode">
+                                <Columns>
+                                    <asp:BoundField DataField="SubCatBCode" HeaderText="ID" ReadOnly="True" SortExpression="SubCatBCode" InsertVisible="False"></asp:BoundField>
+                                    <asp:BoundField DataField="CatBCode" HeaderText="Category ID" SortExpression="CatBCode" />
+                                    <asp:BoundField DataField="CatName" HeaderText="Category" SortExpression="CatName" />
+                                    <asp:BoundField DataField="SubCatBCode" HeaderText="Sub Category ID" SortExpression="SubCatBCode" />
+                                    <asp:BoundField DataField="SubCatName" HeaderText="Sub Category" SortExpression="SubCatName" />
+                                    <%--<asp:ImageField DataImageUrlField="SubcategoryImage" HeaderText="Img">
                                                 <ControlStyle Height="30px" Width="30px" />
                                             </asp:ImageField>--%>
-                                        </Columns>
-                                    </asp:GridView>
-                                </div>
-                            </div>
+                                </Columns>
+                            </asp:GridView>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!--Sub category Details-->
     </div>
 </asp:Content>

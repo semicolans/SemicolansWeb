@@ -71,7 +71,8 @@ namespace eCommerce.AdminSite
                 }
 
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = $"SELECT * FROM tbl_ItemDet INNER JOIN tbl_PriceLink1 ON tbl_PriceLink1.ItemCode=tbl_ItemDet.ItemCode WHERE tbl_ItemDet.chkActiveItem='1'  " +
+                cmd.CommandText = $"SELECT TOP 1000 * FROM tbl_PriceLink1 INNER JOIN tbl_ItemDet ON tbl_ItemDet.ItemCode=tbl_PriceLink1.ItemCode " +
+                    $"WHERE tbl_ItemDet.chkActiveItem='1'  " +
                     $" " + CategoryFind + " " + SubCategoryFind + " " + SupplierFind + " ";
                 cmd.Connection = con;
 
@@ -86,6 +87,27 @@ namespace eCommerce.AdminSite
                 grdProductDetTableView.DataSource = ds;
                 grdProductDetTableView.DataBind();
 
+                //Getting Summery Details
+                SqlCommand cmdSummery = new SqlCommand();
+                cmdSummery.CommandText = $"SELECT COUNT(tbl_PriceLink1.ItemCode) AS NoOfItems," +
+                    $"SUM(tbl_PriceLink1.QtyRemain) AS TotalQty, " +
+                    $"SUM(tbl_PriceLink1.QtyRemain*tbl_PriceLink1.ItemAvgCost) AS CostValue," +
+                    $"SUM(tbl_PriceLink1.QtyRemain*tbl_PriceLink1.ItemSPrice) AS SalesValue " +
+                    $"FROM tbl_PriceLink1 INNER JOIN tbl_ItemDet ON tbl_ItemDet.ItemCode=tbl_PriceLink1.ItemCode " +
+                    $"WHERE tbl_ItemDet.chkActiveItem='1'  " +
+                    $" " + CategoryFind + " " + SubCategoryFind + " " + SupplierFind + " ";
+                cmdSummery.Connection = con;
+                SqlDataAdapter daSummery = new SqlDataAdapter(cmdSummery);
+                DataTable dtSummery = new DataTable();
+                DataSet dsSummery = new DataSet();
+                daSummery.Fill(dsSummery);
+
+                decimal NoOfItems=  Convert.ToDecimal(dsSummery.Tables[0].Rows[0]["TotalQty"].ToString()) ;
+
+                lblNoOfItems.Text = "No Of Items : " + NoOfItems;
+                lblTotalQtyRemain.Text = "Qty Remain : " + dsSummery.Tables[0].Rows[0]["TotalQty"].ToString();
+                lblCostValue.Text = "Cost Value : " + dsSummery.Tables[0].Rows[0]["CostValue"].ToString();
+                lblSalesValue.Text = "Sales Value : " + dsSummery.Tables[0].Rows[0]["SalesValue"].ToString();
                 con.Close();
 
             }

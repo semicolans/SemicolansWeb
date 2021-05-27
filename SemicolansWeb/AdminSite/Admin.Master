@@ -44,16 +44,7 @@
             <%--<a class="navbar-brand" href="index.html">Start Bootstrap</a>--%>
             <asp:Label class="navbar-brand" ID="lblCompanyID" runat="server" Text="SEMICOLANS"></asp:Label>
             <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-2x fa-bars"></i></button>
-            <!-- Navbar Search-->
-<%--            <div class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
-                <div class="input-group">
-                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" />
-                    <div class="input-group-append">
-                        <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
-                    </div>
-                </div>
-            </div>--%>
-            <!-- Navbar-->
+
             <asp:LinkButton ID="btnLogOut" runat="server" CssClass="btn btn-primary"  OnClick="btnLogOut_Click">
             <i class="fas fa-sign-out-alt"></i></asp:LinkButton>
 <%--            <ul class="navbar-nav ml-auto ml-md-0">
@@ -73,23 +64,56 @@
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
+                            <%--Dashboard Menu--%>
                             <a class="nav-link" href="AdminDashboard.aspx"><div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
-                            <%--DropDown Menu--%>
+                            <%--Dashboard Menu--%>
+
+                            <%--Product Management Menu--%>
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                                <div class="sb-nav-link-icon"><i class="fa fa-archive" aria-hidden="true"></i></div>
                                 Product Management
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
                             <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                    <a class="nav-link" href="ProductDet.aspx"><i class="fab fa-bandcamp"></i>Product Records</a>
+                                    <a class="nav-link" href="ProductDet.aspx"><i class="fa fa-archive" aria-hidden="true"></i>Product Records</a>
                                     <a class="nav-link" href="CategoriesDet.aspx"><i class="fab fa-bandcamp"></i>Categories</a>
                                     <a class="nav-link" href="SubCategoriesDet.aspx"><i class="fas fa-stream"></i>Sub Categories</a>
-
                                 </nav>
                             </div>
+                            <%--Product Management Menu--%>
+
+                            <%--Supplier Management Menu--%>
+                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePagesSup" aria-expanded="false" aria-controls="collapsePages">
+                                <div class="sb-nav-link-icon"><i class="fa fa-building" aria-hidden="true"></i></div>
+                                Supplier Management
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapsePagesSup" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPagesSub">
+                                    <a class="nav-link" href="SupplierDet.aspx"><i class="fab fa-bandcamp"></i>Supplier Records</a>
+                                    <a class="nav-link" href="CategoriesDet.aspx"><i class="fab fa-bandcamp"></i>Creditors</a>
+                                    <a class="nav-link" href="SubCategoriesDet.aspx"><i class="fas fa-stream"></i>Payable</a>
+                                </nav>
+                            </div>
+                            <%--Supplier Management Menu--%>
+
+                            <%--Customer Management Menu--%>
+                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePagesCus" aria-expanded="false" aria-controls="collapsePages">
+                                <div class="sb-nav-link-icon"><i class="fa fa-building" aria-hidden="true"></i></div>
+                                Customer Management
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapsePagesCus" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPagesCus">
+                                    <a class="nav-link" href="ProductDet.aspx"><i class="fab fa-bandcamp"></i>Customer Records</a>
+                                    <a class="nav-link" href="CategoriesDet.aspx"><i class="fab fa-bandcamp"></i>Debtors</a>
+                                    <a class="nav-link" href="SubCategoriesDet.aspx"><i class="fas fa-stream"></i>Receivable</a>
+                                </nav>
+                            </div>
+                            <%--Customer Management Menu--%>
 
 <%--                            <a class="nav-link" href="ProductDet.aspx"><div class="sb-nav-link-icon"><i class="fab fa-bandcamp"></i></div>
                                 Products
@@ -135,6 +159,7 @@
                     </div>
                 </nav>
             </div>
+
             <div id="layoutSidenav_content">
                 <main>
                     <div>
@@ -142,7 +167,7 @@
                         </asp:ContentPlaceHolder>
                     </div>
                 </main>
-                <footer class="py-4 bg-light mt-auto">
+<%--                <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid">
                         <div class="d-flex align-items-center justify-content-between small">
                             <div class="text-muted">Copyright &copy; Semicolans</div>
@@ -153,7 +178,7 @@
                             </div>
                         </div>
                     </div>
-                </footer>
+                </footer>--%>
             </div>
         </div>
     </Form>
