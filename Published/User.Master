@@ -1,0 +1,286 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="User.Master.cs" Inherits="eCommerce.UserSite.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Hind:400,700" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+    <%--<link href="../Bootstrap/css/bootstrap.min.css" rel="stylesheet" />--%>
+
+    <!-- Slick -->
+    <link type="text/css" rel="stylesheet" href="css/slick.css" />
+    <link type="text/css" rel="stylesheet" href="css/slick-theme.css" />
+
+    <!-- nouislider -->
+    <link type="text/css" rel="stylesheet" href="css/nouislider.min.css" />
+
+    <!-- Font Awesome Icon -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <!-- Custom stlylesheet -->
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <link type="text/css" rel="stylesheet" href="css/ScrollBar.css" />
+    <link href="css/CustomStyle.css" rel="stylesheet" />
+
+    <!--SweetAlert Javascript -->
+    <script src="../SweetAlert/Js/SweetAlert.js"></script>
+    <script src="../SweetAlert/Js/SweetAlerts1.js"></script>
+    <script src="../SweetAlert/Js/SweetAlert2.js"></script>
+    <link href="../SweetAlert/Js/SweetAlert.css" rel="stylesheet" />
+
+    <!--TinyMultiLine text Box -->
+    <script src="../ckeditor/ckeditor.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<%--    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>--%>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+
+<body>
+    <form id="form1" runat="server">
+        <!-- HEADER -->
+        <header>
+
+        </header>
+        <!-- /HEADER -->
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+              <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                    <asp:Image class="navbar-brand" Width="60px" Height="60px" runat="server" src="../Images/LogoColor.jpg" Style="margin-top:5px; border-radius:50%;padding:0px;"/>
+                  <a class="navbar-brand" style="font-size:30px;margin-top:5px;margin-left:1px;" href="#">
+                      SEMICOLANS</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                  <ul class="nav navbar-nav">
+                        <li class="active pl-5 " style="margin-top:5px;"><a href="Default.aspx">HOME <span class="sr-only">(current)</span></a></li>
+                        <li style="margin-top:5px;"><a href="DisplayAllProducts.aspx">SHOP</a></li>
+                        <li style="margin-top:5px;"><a href="#">ABOUT US</a></li>
+                        <%--<li style="margin-top:5px;"><a href="DisplayAllProducts.aspx">CONTACT US</a></li>--%>
+                  </ul>
+
+                  <ul class="nav navbar-nav navbar-right header-btns DesktopContent" style="margin-top:-10px;">
+                    <li class="header-cart dropdown default-dropdown "><a class="dropdown-toggle " data-toggle="dropdown" aria-expanded="true">
+                            <i class="fa fa-shopping-cart"></i> <span class="badge"><asp:Label ID="lblShoppingQty" runat="server" Text="0"></asp:Label></span></a>
+                        <div class="custom-menu">
+                            <div id="shopping-cart">
+                                <div class="shopping-cart-list">
+                                    <asp:GridView ID="grdShoppingCard" runat="server" AutoGenerateColumns="False" Width="260px" BorderWidth="0px" AllowCustomPaging="True" AllowPaging="True" CellSpacing="1" ShowHeader="False" OnRowCommand="grdShoppingCard_RowCommand">
+                                        <Columns>
+                                            <asp:TemplateField>
+                                                <ItemTemplate>
+                                                    <div class="product product-widget">
+                                                        <div class="product-thumb">
+                                                            <asp:Image ID="Image1" Style="text-align: left;" Height="50px" Width="50px" runat="server" class="img-fluid p-2 thumb" ImageUrl='<%# "."+Eval("imgPath") %>'></asp:Image>
+                                                        </div>
+                                                        <div class="product-body">
+                                                            <h3 class="product-price"><%#String.Format("{0:#,#.00}",Eval("ItemSPrice")) %><span class="qty"> x<%# String.Format("{0:#,#.00}",Eval("Qty")) %></span></h3>
+                                                            <h2 class="product-name"><a href="#"><%# Eval("ItemName") %></a></h2>
+                                                        </div>
+                                                        <asp:LinkButton ID="btnDeleteItem" runat="server" class="cancel-btn" CommandName="DeleteShoppingItem" CommandArgument='<%# Container.DataItemIndex %>'>
+                                                        <i class="fa fa-trash"></i>
+                                                        </asp:LinkButton>
+
+                                                    </div>
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+                                        </Columns>
+                                    </asp:GridView>
+                                </div>
+                                <div>
+                                    <asp:Label ID="lblEmptyShoppingCard" runat="server" Font-Bold="True" Style="color: #F8694A;" Font-Size="Larger" Text="Shopping Card is Empty."></asp:Label>
+                                </div>
+                                <div class="shopping-cart-btns">
+                                    <asp:LinkButton ID="btnViewCard" runat="server" class="main-btn" Width="100px" OnClick="btnViewCard_Click"> Card</asp:LinkButton>
+                                    <asp:LinkButton ID="btnCheckOut" runat="server" class="primary-btn" Width="150px" OnClick="btnCheckOut_Click">Checkout<i class="fa fa-arrow-circle-right"></i></asp:LinkButton>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="header-account dropdown default-dropdown" style="margin-left:-10px;">
+                        <a class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
+                            <i class="fa fa-user-o"></i>
+                            <asp:Label ID="lblCustomerName" runat="server" Text=""></asp:Label>
+                        </a>
+                        <ul id="AccountMenu" class="custom-menu" runat="server">
+                            <li>
+                                <asp:LinkButton class="text-uppercase" ID="LinkButton1" runat="server"><i class="fa fa-user-o"></i>My Account</asp:LinkButton></li>
+                            <li>
+                                <asp:LinkButton class="text-uppercase" ID="LinkButton2" runat="server"><i class="fa fa-heart-o"></i>My Wishlist</asp:LinkButton></li>
+                            <li>
+                                <asp:LinkButton class="text-uppercase" ID="LinkButton3" runat="server"><i class="fa fa-exchange"></i>Compare</asp:LinkButton></li>
+                            <li>
+                                <asp:LinkButton class="text-uppercase" ID="LinkButton4" runat="server"><i class="fa fa-check"></i>Checkout</asp:LinkButton></li>
+                            <li>
+                                <asp:LinkButton class="text-uppercase" ID="btnLogout" runat="server" OnClick="btnLogout_Click"><i class="fa fa-unlock-alt"></i>Logout</asp:LinkButton></li>
+                        </ul>
+                    </li>
+                    <li style="margin-left:-10px;">
+                        <asp:LinkButton class="text-uppercase" ID="btnLogin" runat="server" OnClick="btnLogin_Click">Login/</asp:LinkButton>            
+                    </li>
+                    <li style="margin-left:-10px;">
+                        <asp:LinkButton class="text-uppercase" ID="btnRegister" runat="server" OnClick="btnRegister_Click">Register</asp:LinkButton>
+                    </li>
+
+                  </ul>
+                </div><!-- /.navbar-collapse -->
+              </div><!-- /.container-fluid -->
+            </nav>
+
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+
+        <!-- FOOTER -->
+
+        <%--fixed footer fo mobile device--%>
+        <ul class="navbar navbar-inverse navbar-fixed-bottom MobileContent TabContent">
+            <li class="header-cart dropdown default-dropdown "><a class="navbar-brand" href="DisplayAllProducts.aspx" style="width:20%;margin-top:-10px;margin-left:10px;">
+                <i class="fa fa-shopping-bag fa-1x" aria-hidden="true"></i><div style="font-size:12px;margin-left:-7px;">SHOP</div></a></li>
+
+            <li id="btnCustomerLogin" class="header-cart dropdown default-dropdown " runat="server">
+                <a class="navbar-brand" href="CustomerLogin.aspx" style="width:20%;margin-top:-10px;">
+                <i class="fa fa-user fa-1x" aria-hidden="true"></i><p style="font-size:12px;margin-left:-19px;">ACCOUNT</p></a></li>
+            <li id="CustomerAcMenuFooter" class="header-account dropdown default-dropdown" runat="server">
+                <a class="navbar-brand dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true" style="width:20%;margin-top:-10px;margin-left:-10px;">
+                <i class="fa fa-user fa-1x" aria-hidden="true"></i><p style="font-size:12px;margin-left:-19px;">ACCOUNT</p></a>
+                 <ul id="CustomerMenuFooter" class="custom-menu" style="margin-top:-250px;" runat="server">
+                     <li>
+                         <asp:Label ID="lblCustomerNameFooter" runat="server" Text=""></asp:Label>
+                     </li>
+                    <li>
+                        <asp:LinkButton class="text-uppercase" ID="LinkButton10" runat="server"><i class="fa fa-user-o"></i>My Account</asp:LinkButton></li>
+                    <li>
+                        <asp:LinkButton class="text-uppercase" ID="LinkButton11" runat="server"><i class="fa fa-heart-o"></i>My Wishlist</asp:LinkButton></li>
+                    <li>
+                        <asp:LinkButton class="text-uppercase" ID="LinkButton12" runat="server"><i class="fa fa-exchange"></i>Compare</asp:LinkButton></li>
+                    <li>
+                        <asp:LinkButton class="text-uppercase" ID="LinkButton13" runat="server"><i class="fa fa-check"></i>Checkout</asp:LinkButton></li>
+                    <li>
+                        <asp:LinkButton class="text-uppercase" ID="LinkButton14" runat="server" OnClick="btnLogout_Click"><i class="fa fa-unlock-alt"></i>Logout</asp:LinkButton></li>
+                </ul>
+            </li>
+
+
+            <li><a class="navbar-brand" href="Default.aspx" style="width:20%;margin-top:-20px;">
+                <i class="fa fa-home fa-2x" aria-hidden="true"></i><p style="font-size:12px;margin-left:-2px;margin-top:-3px;">HOME</p></a></li>
+
+
+            <li style="margin-left:-10px;"><ul class="navbar-nav">
+                <li class="header-cart dropdown default-dropdown">
+                    <a class="navbar-brand dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true" style="width:20%;margin-top:-13px;margin-left:-10px;">
+                        <i class="fa fa-shopping-cart fa-1x" aria-hidden="true"></i><span class="badge">
+                        <asp:Label ID="lblShoppingQtyFooter" runat="server" Text="0"></asp:Label></span><p style="font-size:12px;margin-left:-7px;">CART</p>
+                    </a>
+                    <div class="custom-menu" style="margin-top:-300px;overflow:scroll;max-height:300px;">
+                        <div id="shopping-cart1">
+                            <div class="shopping-cart-list">
+                                <asp:GridView ID="grdShoppingCardFooter" runat="server" AutoGenerateColumns="False" Width="260px" BorderWidth="0px" AllowCustomPaging="True" AllowPaging="True" CellSpacing="1" ShowHeader="False" OnRowCommand="grdShoppingCard_RowCommand">
+                                    <Columns>
+                                        <asp:TemplateField>
+                                            <ItemTemplate>
+                                                <div class="product product-widget">
+                                                    <div class="product-thumb">
+                                                        <asp:Image ID="Image1" Style="text-align: left;" Height="50px" Width="50px" runat="server" class="img-fluid p-2 thumb" ImageUrl='<%# "."+Eval("imgPath") %>'></asp:Image>
+                                                    </div>
+                                                    <div class="product-body">
+                                                        <h3 class="product-price"><%# String.Format("{0:#,#.00}",Eval("ItemSPrice")) %><span class="qty"> x<%# String.Format("{0:#,#.00}",Eval("Qty")) %></span></h3>
+                                                        <h2 class="product-name"><a href="#"><%# Eval("ItemName") %></a></h2>
+                                                    </div>
+                                                    <asp:LinkButton ID="btnDeleteItem" runat="server" class="cancel-btn" CommandName="DeleteShoppingItem" CommandArgument='<%# Container.DataItemIndex %>'>
+                                                <i class="fa fa-trash"></i>
+                                                    </asp:LinkButton>
+
+                                                </div>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                    </Columns>
+                                </asp:GridView>
+                            </div>
+                            <div>
+                                <asp:Label ID="lblEmptyShoppingCardFooter" runat="server" Font-Bold="True" Style="color: #F8694A;" Font-Size="Larger" Text="Shopping Card is Empty."></asp:Label>
+                            </div>
+                            <div class="shopping-cart-btns">
+                                <asp:LinkButton ID="btnViewCardFooter" runat="server" class="main-btn" Width="100px" OnClick="btnViewCardFooter_Click"> Card
+                                </asp:LinkButton>
+                                <asp:LinkButton ID="btnCheckOutFooter" runat="server" class="primary-btn" Width="150px" OnClick="btnCheckOutFooter_Click" >Checkout<i class="fa fa-arrow-circle-right"></i>
+                                </asp:LinkButton>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+           </ul></li>
+
+            <li id="btnCheckOutFooterButton" runat="server"><a class="navbar-brand" href="CheckoutPage.aspx" style="width:20%;margin-top:-18px;margin-left:-10px;" >
+                <i class="fa fa-arrow-circle-right fa-1x" aria-hidden="true"></i><p style="font-size:12px;margin-left:-22px;">CHECKOUT</p></a></li>
+       </ul>
+        <footer id="footer" class="section section-grey">
+            <!-- container -->
+            <div class="container-fluid">
+                <!-- row -->
+
+                <hr>
+                <!-- row -->
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 text-center">
+                        <!-- footer copyright -->
+                        <div >
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                            All rights reserved by <a href="www.semicolans.com" target="_blank">Semicolans (Pvt) Ltd.</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </div>
+                        <!-- /footer copyright -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 text-center"><a href="../AdminSite/AdminLogin.aspx">STORE</a></div>
+                </div>
+                <!-- /row -->
+            </div>
+            <!-- /container -->
+        </footer>
+        <!-- /FOOTER -->
+    </form>
+</body>
+<!-- jQuery Plugins -->
+
+<%--<%--<script src="js/jquery.min.js"></script>--%>
+<%--<script src="js/popper.min.js"></script>--%>
+<%--<script src="js/bootstrap.min.js"></script>--%>
+<%--<script src="js/jquery.min.js"></script>--%>
+<%--<script src="js/jquery.min.js"></script>--%>
+
+<%--<script src="js/slick.min.js"></script>
+<script src="js/nouislider.min.js"></script>
+<script src="js/jquery.zoom.min.js"></script>
+<script src="js/main.js"></script>--%>
+
+    <script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.min.js"></script>
+
+<script src="js/slick.min.js"></script>
+<script src="js/nouislider.min.js"></script>
+<script src="js/jquery.zoom.min.js"></script>
+<script src="js/main.js"></script>
+
+</html>

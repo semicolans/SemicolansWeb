@@ -1,0 +1,101 @@
+﻿/*Custom Styles*/
+/*FixedFooter Style*/
+
+.section-title {
+    position: relative;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    border-bottom: 1px solid #DADADA;
+}
+
+    .section-title .title {
+        display: inline-block;
+        text-transform: uppercase;
+    }
+
+    .section-title:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -1.5px;
+        height: 3px;
+        width: 60px;
+        background-color: #F8694A;
+    }
+
+#FixedFooter {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    background-color: #dfe6e9;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    height: 60px;
+}
+
+#FixedHeader {
+    position: fixed;
+    left: 0;
+    Top: 0px;
+    width: 100%;
+    color: white;
+    text-align: center;
+    background-color: #dfe6e9;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    height: 50px;
+}
+/*----------------------------*\
+	Product tab
+\*----------------------------*/
+
+.product-tab {
+    margin-top: 30px;
+}
+
+    .product-tab .tab-nav {
+        border-bottom: 1px solid #DADADA;
+        margin-bottom: 30px;
+    }
+
+        .product-tab .tab-nav li {
+            display: inline-block;
+        }
+
+            .product-tab .tab-nav li + li {
+                margin-left: 30px;
+            }
+
+            .product-tab .tab-nav li a {
+                display: block;
+                padding: 15px 0px;
+                text-transform: uppercase;
+                font-weight: 700;
+            }
+
+            .product-tab .tab-nav li.active {
+                position: relative;
+            }
+
+                .product-tab .tab-nav li.active a {
+                    color: #F8694A;
+                }
+
+                    .product-tab .tab-nav li.active a:after {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        bottom: -1.5px;
+                        height: 3px;
+                        width: 30px;
+                        background-color: #F8694A;
+                    }
+
+
+/*End Fixed Footer*/
+
+
+

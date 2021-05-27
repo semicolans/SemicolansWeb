@@ -1,0 +1,13 @@
+﻿#FixedButton {
+    border: 1px solid #000;
+    height: 250px;
+    width: 250px;
+    position: absolute;
+}
+
+.wrapper {
+    position: absolute;
+    bottom: 10px; /* change for another 'same distance' */
+    right: 0;
+    background: blue;
+}
